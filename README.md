@@ -1,6 +1,6 @@
 # Openfire Candy Plugin
 
-Adds Candy web client to Openfire.
+Adds the third-party [Candy web client](https://candy-chat.github.io/candy/) to Openfire.
 
 ## CI Build Status
 
