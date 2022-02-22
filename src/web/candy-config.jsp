@@ -1,5 +1,5 @@
 <!--
-  - Copyright (C) 2017 Ignite Realtime Foundation. All rights reserved.
+  - Copyright (C) 2017-2022 Ignite Realtime Foundation. All rights reserved.
   -
   - Licensed under the Apache License, Version 2.0 (the "License");
   - you may not use this file except in compliance with the License.
@@ -29,6 +29,8 @@
 <%@ page import="org.jivesoftware.openfire.http.HttpBindManager" %>
 <%@ page import="org.igniterealtime.openfire.plugin.candy.Language" %>
 <%@ page import="org.igniterealtime.openfire.plugin.candy.CandyPlugin" %>
+<%@ page import="org.jivesoftware.openfire.spi.ConnectionType" %>
+<%@ page import="org.jivesoftware.openfire.spi.ConnectionManagerImpl" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <jsp:useBean id="webManager" class="org.jivesoftware.util.WebManager"  />
@@ -199,14 +201,14 @@
         <fmt:param value=""/>
     </fmt:message>
     <% if ( httpBindManager.isHttpBindActive() ) {
-        final String unsecuredAddress = "http://" + XMPPServer.getInstance().getServerInfo().getHostname() + ":" + httpBindManager.getHttpBindUnsecurePort() + "/candy/";
+        final String unsecuredAddress = "http://" + XMPPServer.getInstance().getServerInfo().getHostname() + ":" + ((ConnectionManagerImpl)XMPPServer.getInstance().getConnectionManager()).getPort(ConnectionType.BOSH_C2S, false) + "/candy/";
     %>
         <fmt:message key="config.page.link.unsecure">
             <fmt:param value="<%=unsecuredAddress%>"/>
         </fmt:message>
     <% } %>
     <% if ( httpBindManager.isHttpsBindActive() ) {
-        final String securedAddress = "https://" + XMPPServer.getInstance().getServerInfo().getHostname() + ":" + httpBindManager.getHttpBindSecurePort() + "/candy/";
+        final String securedAddress = "https://" + XMPPServer.getInstance().getServerInfo().getHostname() + ":" + ((ConnectionManagerImpl)XMPPServer.getInstance().getConnectionManager()).getPort(ConnectionType.BOSH_C2S, true) + "/candy/";
     %>
         <fmt:message key="config.page.link.secure">
             <fmt:param value="<%=securedAddress%>"/>
