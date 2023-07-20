@@ -5,7 +5,7 @@
     <description>Adds the (third-party) Candy web client to Openfire.</description>
     <author>Guus der Kinderen</author>
     <version>${project.version}</version>
-    <date>2022-02-22</date>
+    <date>2023-07-20</date>
     <minServerVersion>4.7.0</minServerVersion>
     <minJavaVersion>1.8</minJavaVersion>
     <adminconsole>
