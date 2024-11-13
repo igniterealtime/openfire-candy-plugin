@@ -5,8 +5,9 @@
     <description>Adds the (third-party) Candy web client to Openfire.</description>
     <author>Guus der Kinderen</author>
     <version>${project.version}</version>
-    <date>2023-07-20</date>
+    <date>2024-11-13</date>
     <minServerVersion>4.7.0</minServerVersion>
+    <priorToServerVersion>5.0.0</priorToServerVersion>
     <minJavaVersion>1.8</minJavaVersion>
     <adminconsole>
         <tab id="tab-webclients" name="${admin.sidebar.webclients.name}" description="${admin.sidebar.webclients.description}" url="candy-config.jsp">    
