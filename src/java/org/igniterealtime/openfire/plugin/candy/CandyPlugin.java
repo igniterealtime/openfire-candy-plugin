@@ -15,8 +15,6 @@
  */
 package org.igniterealtime.openfire.plugin.candy;
 
-import org.apache.tomcat.InstanceManager;
-import org.apache.tomcat.SimpleInstanceManager;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.jivesoftware.admin.AuthCheckFilter;
 import org.jivesoftware.openfire.container.Plugin;
@@ -56,7 +54,6 @@ public class CandyPlugin implements Plugin
         // Add the Webchat sources to the same context as the one that's providing the BOSH interface.
         context = new WebAppContext( null, pluginDirectory.getPath() + File.separator + "classes", "/candy" );
         context.setClassLoader( this.getClass().getClassLoader() );
-        context.setAttribute( InstanceManager.class.getName(), new SimpleInstanceManager());
 
         HttpBindManager.getInstance().addJettyHandler( context );
     }
