@@ -6,9 +6,7 @@
     <author>Guus der Kinderen</author>
     <version>${project.version}</version>
     <date>2024-11-19</date>
-    <minServerVersion>4.7.0</minServerVersion>
-    <priorToServerVersion>5.0.0</priorToServerVersion>
-    <minJavaVersion>1.8</minJavaVersion>
+    <minServerVersion>5.0.0</minServerVersion>
     <adminconsole>
         <tab id="tab-webclients" name="${admin.sidebar.webclients.name}" description="${admin.sidebar.webclients.description}" url="candy-config.jsp">    
             <sidebar id="tab-candy" name="${admin.sidebar.webclients.item.candy.name}" description="${admin.sidebar.webclients.item.candy.description}">
